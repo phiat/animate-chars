@@ -194,14 +194,20 @@ interactive_mode() {
       ((current++))
     done
 
-    # Display header (compact)
-    printf "┌─ Unicode Browser ─ Range: 0x%X-0x%X ─ Step: %d ─┐\n" "$position" "$((position + step_size))" "$step_size"
+    # Display header (fixed width, 60 chars)
+    printf "┌─ Unicode Browser ────────────────────────────────────────┐\n"
+    printf "│ Range: 0x%05X-0x%05X%36s│\n" "$position" "$((position + display_size - 1))" ""
     if [ ${#selected[@]} -gt 0 ]; then
-      printf "│ Selected (%d): %s\n" "${#selected[@]}" "${selected[*]}"
+      local selected_preview="${selected[*]}"
+      # Truncate if too long
+      if [ ${#selected_preview} -gt 30 ]; then
+        selected_preview="${selected_preview:0:27}..."
+      fi
+      printf "│ Step: %-4d%31sSelected: %-6s│\n" "$step_size" "" "${#selected[@]}"
     else
-      printf "│ Selected: (none)\n"
+      printf "│ Step: %-4d%31sSelected: (none) │\n" "$step_size" ""
     fi
-    printf "└────────────────────────────────────────────────────┘\n"
+    printf "└──────────────────────────────────────────────────────────┘\n"
 
     # Display characters
     for i in "${!page_chars[@]}"; do
