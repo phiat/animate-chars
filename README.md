@@ -36,26 +36,29 @@ A CLI tool for animating Unicode characters and browsing the entire Unicode spac
 ```
 
 **Controls:**
-- `0-9` — Select character (allows duplicates)
-- `n/p` — Next/previous page
+- `0-9` — Select character (allows duplicates for sequences)
+- `n/p` — Next/previous by step size (default: 10)
 - `j/k` — Jump ±100 codepoints
 - `J/K` — Jump ±1000 codepoints
-- `+/-` — Adjust step size
-- `g` — Goto specific address
-- `s` — Save selection
-- `q` — Quit
+- `+/-` — Adjust step size (10 → 50 → 100 → 500 → 1000)
+- `g` — Goto specific address (shows popular ranges)
+- `s` — Save selection (prompts for filename)
+- `q` — Quit without saving
+
+Always displays 10 characters per screen. Navigation is consistent and predictable.
 
 ## Options
 
 ```
 --range START:LENGTH    Unicode range (e.g., 0xAB20:7)
 --chars "a,b,c"         Comma-separated character list
---file FILE             Load characters from saved file
+--file, -f FILE         Load characters from saved file
 --speed SECONDS         Animation speed (default: 0.1)
 --timer SECONDS         Run for specified duration
 --once                  Single pass through characters
---show                  Print characters with codepoints
---interactive [START]   Interactive Unicode browser
+--show                  Print characters with codepoints (no animation)
+--interactive, -i [START]  Interactive Unicode browser (default: 0xAB20)
+-h, --help              Show help message
 ```
 
 ## Examples
