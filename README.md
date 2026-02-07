@@ -4,6 +4,8 @@
 
 A CLI tool for animating Unicode characters and browsing the entire Unicode space.
 
+> **Note:** A Rust port with enhanced TUI is available at [animate-chars-rs](https://github.com/phiat/animate-chars-rs)
+
 ## Features
 
 - **Animate** any sequence of characters as a terminal spinner
@@ -100,3 +102,7 @@ Always displays 10 characters per screen. Navigation is consistent and predictab
 ## License
 
 MIT
+
+## Related
+
+- [animate-chars-rs](https://github.com/phiat/animate-chars-rs) - Rust port with ratatui TUI framework
