@@ -36,10 +36,10 @@ A CLI tool for animating Unicode characters and browsing the entire Unicode spac
 ```
 
 ```
-┌─ Unicode Browser ────────────────────────────────────────┐
-│ Range: 0xAB20-0xAB29                                     │
-│ Step: 10                              Selected: (none)   │
-└──────────────────────────────────────────────────────────┘
+┌─ Unicode Browser ─────────────────────────────────
+│ Range: 0x0AB20-0x0AB29
+│ Step: 10                      Selected: (none)
+└───────────────────────────────────────────────────
 [0] U+AB20   ( 43808) ꬠ
 [1] U+AB21   ( 43809) ꬡ
 [2] U+AB22   ( 43810) ꬢ
