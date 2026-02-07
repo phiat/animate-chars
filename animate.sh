@@ -177,6 +177,13 @@ interactive_mode() {
     # Clear screen
     clear
 
+    # Ensure position is within bounds
+    if [ "$position" -lt 0 ]; then
+      position=0
+    elif [ "$position" -gt "$max_position" ]; then
+      position=$max_position
+    fi
+
     # Build page of characters (shows all, including unprintables)
     local page_chars=()
     local page_codes=()
