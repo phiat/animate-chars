@@ -243,9 +243,6 @@ interactive_mode() {
       p)
         # Previous page
         position=$((position - step_size))
-        if [ "$position" -lt "$INTERACTIVE_START" ]; then
-          position=$INTERACTIVE_START
-        fi
         ;;
       j)
         # Jump forward 100
@@ -254,9 +251,6 @@ interactive_mode() {
       k)
         # Jump back 100
         position=$((position - 100))
-        if [ "$position" -lt "$INTERACTIVE_START" ]; then
-          position=$INTERACTIVE_START
-        fi
         ;;
       J)
         # Jump forward 1000
@@ -265,9 +259,6 @@ interactive_mode() {
       K)
         # Jump back 1000
         position=$((position - 1000))
-        if [ "$position" -lt "$INTERACTIVE_START" ]; then
-          position=$INTERACTIVE_START
-        fi
         ;;
       +)
         # Increase step size
