@@ -1,5 +1,7 @@
 # animate-chars
 
+![Demo](cham-dog.gif)
+
 A CLI tool for animating Unicode characters and browsing the entire Unicode space.
 
 ## Features
