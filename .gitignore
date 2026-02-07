@@ -1,0 +1,6 @@
+# Generated character files
+selected_chars.txt
+*.txt
+
+# Except README
+!README.md
